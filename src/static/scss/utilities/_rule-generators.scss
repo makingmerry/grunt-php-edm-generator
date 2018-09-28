@@ -1,0 +1,82 @@
+// # Rule generators
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// # Spacings
+//
+// @global:
+// $spacing-step
+// $spacing-val
+////////////////////////////////////////
+////////////////////////////////////////
+
+// Calculate a spacing value from a scale step.
+@function get-scale-spacing($base, $step, $ratio) {
+  @return pow($ratio, $step - 1) * $base;
+}
+
+// Constructs spacing rules with a map of spacing values.
+@mixin spacing-rules($custom, $custom-map, $scale-map) {
+  // Undesirable, but expose mixin variables to the global scope
+  // so @content can access them when composing rules.
+
+  // Custom values from config.
+  @if ($custom) {
+    @each $step, $val in $custom-map {
+      $spacing-step: '-' + $step !global;
+      $spacing-val: $val !global;
+      @content;
+    }
+
+  // Generate values with a scale.
+  } @else {
+    $base: map-get($scale-map, base);
+    $ratio: map-get($scale-map, ratio);
+    $steps: map-get($scale-map, steps);
+
+    @for $step from 1 through $steps {
+      $spacing-step: '-' + $step !global;
+      $spacing-val: get-scale-spacing($base, $step, $ratio) !global;
+      @content;
+    }
+  }
+}
+
+// # Colors
+//
+// @global:
+// $color-name
+// $color-val
+////////////////////////////////////////
+////////////////////////////////////////
+
+// Constructs color rules with a map of color values.
+@mixin color-rules($map) {
+  @each $name, $val in $map {
+    // Undesirable, but expose mixin variables to the global scope
+    // so @content can access them when composing rules.
+    $color-name: '-' + $name !global;
+    $color-val: $val !global;
+    @content;
+  }
+}
+
+// # Borders
+//
+// @global:
+// $border-width-step
+// $border-width-val
+////////////////////////////////////////
+////////////////////////////////////////
+
+// Constructs border-width rules with a map of border-width values.
+@mixin border-width-rules($map) {
+  @each $step, $val in $map {
+    // Undesirable, but expose mixin variables to the global scope
+    // so @content can access them when composing rules.
+    $border-width-step: '-' + $step !global;
+    $border-width-val: $val !global;
+    @content;
+  }
+}

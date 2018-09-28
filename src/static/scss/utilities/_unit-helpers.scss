@@ -1,0 +1,18 @@
+// # Unit helpers
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+$browser-context: 16;
+
+@function px($em, $browser-context) {
+  @return #{$em * $context}px;
+}

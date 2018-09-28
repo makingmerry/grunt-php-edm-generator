@@ -1,0 +1,11 @@
+// # Horizontal align
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// Capital M ‘Margin’ CSS rule hack:
+// - Fools Outlook clients into not stripping out Margin attribute.
+
+.ha-right { Margin-right: 0; Margin-left: auto; }
+.ha-left { Margin-right: auto; Margin-left: 0; }
+.ha-center { Margin-right: auto; Margin-left: auto; }

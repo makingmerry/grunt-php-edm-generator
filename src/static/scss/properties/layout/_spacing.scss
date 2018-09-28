@@ -1,0 +1,55 @@
+// # Spacing
+// Margins and paddings.
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// Capital M ‘Margin’ CSS rule hack:
+// - Fools Outlook clients into not stripping out Margin attribute.
+
+// margin:
+.m-top-0 { Margin-top: 0; }
+.m-bottom-0 { Margin-bottom: 0; }
+.m-right-0 { Margin-right: 0; }
+.m-left-0 { Margin-left: 0; }
+.m-ver-0 { Margin-top: 0; Margin-bottom: 0; }
+.m-hor-0 { Margin-right: 0; Margin-left: 0; }
+.m-all-0 { Margin: 0; }
+
+// padding:
+.p-top-0 { padding-top: 0; }
+.p-bottom-0 { padding-bottom: 0; }
+.p-right-0 { padding-right: 0; }
+.p-left-0 { padding-left: 0; }
+.p-ver-0 { padding-top: 0; padding-bottom: 0; }
+.p-hor-0 { padding-right: 0; padding-left: 0; }
+.p-all-0 { padding: 0; }
+
+@include spacing-rules($custom-spacings, $spacings, $spacing-scale) {
+  // margin:
+  .m-top#{$spacing-step} { Margin-top: $spacing-val; }
+  .m-bottom#{$spacing-step} { Margin-bottom: $spacing-val; }
+  .m-right#{$spacing-step} { Margin-right: $spacing-val; }
+  .m-left#{$spacing-step} { Margin-left: $spacing-val; }
+  .m-ver#{$spacing-step} { Margin-top: $spacing-val; Margin-bottom: $spacing-val; }
+  .m-hor#{$spacing-step} { Margin-right: $spacing-val; Margin-left: $spacing-val; }
+  .m-all#{$spacing-step} { Margin: $spacing-val; }
+
+  // margin (negative):
+  .m-top#{$spacing-step}n { Margin-top: - $spacing-val; }
+  .m-bottom#{$spacing-step}n { Margin-bottom: - $spacing-val; }
+  .m-right#{$spacing-step}n { Margin-right: - $spacing-val; }
+  .m-left#{$spacing-step}n { Margin-left: - $spacing-val; }
+  .m-ver#{$spacing-step}n { Margin-top: - $spacing-val; Margin-bottom: - $spacing-val; }
+  .m-hor#{$spacing-step}n { Margin-right: - $spacing-val; Margin-left: - $spacing-val; }
+  .m-all#{$spacing-step}n { Margin: - $spacing-val; }
+
+  // padding:
+  .p-top#{$spacing-step} { padding-top: $spacing-val; }
+  .p-bottom#{$spacing-step} { padding-bottom: $spacing-val; }
+  .p-right#{$spacing-step} { padding-right: $spacing-val; }
+  .p-left#{$spacing-step} { padding-left: $spacing-val; }
+  .p-ver#{$spacing-step} { padding-top: $spacing-val; padding-bottom: $spacing-val; }
+  .p-hor#{$spacing-step} { padding-right: $spacing-val; padding-left: $spacing-val; }
+  .p-all#{$spacing-step} { padding: $spacing-val; }
+}

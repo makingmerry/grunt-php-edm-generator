@@ -1,0 +1,52 @@
+// # Grid
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+.g {
+  max-width: $max-width;
+  min-width: $min-width;
+  // Capital M ‘Margin’ CSS rule hack:
+  // - Fools Outlook clients into not stripping out Margin attribute.
+  Margin-right: auto;
+  Margin-left: auto;
+}
+
+.g__row {
+  text-align: left;
+  font-size: 0;
+}
+
+.g__col {
+  display: inline-block;
+  vertical-align: top;
+}
+
+// # Base
+////////////////////////////////////////
+////////////////////////////////////////
+.g2-1 {
+  max-width: 50%;
+}
+
+.g2-2 {
+  max-width: 100%;
+}
+
+// # Large screen
+////////////////////////////////////////
+////////////////////////////////////////
+
+$breakpoint-num: strip-unit($breakpoint);
+$col-count: 12;
+
+@for $i from 1 through $col-count {
+  .g12-#{$i}--l {
+    min-width: #{$breakpoint-num / $col-count * $i}px;
+    min-width: -webkit-calc(#{$i / $col-count * 100%});
+    min-width: calc(#{$i / $col-count * 100%});
+    width: #{$i / $col-count * 100%};
+    width: -webkit-calc(#{$breakpoint-num * $breakpoint-num}px - #{$breakpoint-num * 100%});
+    width: calc(#{$breakpoint-num * $breakpoint-num}px - #{$breakpoint-num * 100%});
+  }
+}

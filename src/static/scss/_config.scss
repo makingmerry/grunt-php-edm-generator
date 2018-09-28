@@ -1,0 +1,103 @@
+// # Config
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// # Layout
+////////////////////////////////////////
+////////////////////////////////////////
+
+$max-width: 800px;
+$min-width: 320px;
+$breakpoint: 480px;
+
+// List $spacing values if custom-spacings is required, e.g.
+// $spacings: (1: 1em, 2: 2em);
+$custom-spacings: false;
+$spacings: null;
+$spacing-scale: (
+  base: 2px,
+  ratio: 2,
+  steps: 6,
+);
+
+// # Typography
+////////////////////////////////////////
+////////////////////////////////////////
+
+$font-families: (
+  arial: 'arial, helvetica, sans-serif',
+);
+
+// List $font-sizes values if custom-font-sizes is required, e.g.
+// $font-sizes: (1: 2em, 2: 1em);
+$custom-font-sizes: false;
+$font-sizes: null;
+$font-size-scale: (
+  base: 16px,
+  ratio: 1.25,
+  steps-up: 5,
+  steps-down: 2,
+);
+
+$measures: (
+  normal: 480px,
+  narrow: 320px,
+  wide: 544px,
+);
+
+$line-heights: (
+  normal: 1.45,
+  title: 1.15,
+  solid: 1,
+);
+
+$letter-spacings: (
+  normal: 0,
+  track: 0.8px,
+  tight: -4px,
+  wide: 4px,
+);
+
+// # Theming
+////////////////////////////////////////
+////////////////////////////////////////
+
+$colors: (
+  // Brand:
+  // Neutrals:
+  black: #000,
+  near-black: #111,
+  dark-grey: #333,
+  mid-grey: #555,
+  grey: #777,
+  silver: #999,
+  light-silver: #aaa,
+  moon-grey: #ccc,
+  light-grey: #eee,
+  near-white: #f4f4f4,
+  white: #fff,
+  near-transparent-white: rgba(255,255,255,0.15),
+  transparent: transparent,
+  // Utility:
+  ut-dark-red: #e7040f,
+  ut-red: #ff4136,
+  ut-light-red: #ff725c,
+  ut-dark-green: #137752,
+  ut-green: #19a974,
+  ut-light-green: #9eebcf,
+);
+
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 4px,
+  4: 8px,
+);
+
+$border-radiuses: (
+  1: 1px,
+  2: 2px,
+  3: 4px,
+  4: 8px,
+);

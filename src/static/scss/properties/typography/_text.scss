@@ -1,0 +1,68 @@
+// # Text
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// measure:
+.measure-none { max-width: none; }
+.measure-normal { max-width: map-get($measures, normal); }
+.measure-narrow { max-width: map-get($measures, narrow); }
+.measure-wide { max-width: map-get($measures, wide); }
+
+// line-height:
+.line-h-normal { line-height: map-get($line-heights, normal); }
+.line-h-title { line-height: map-get($line-heights, title); }
+.line-h-solid { line-height: map-get($line-heights, solid); }
+
+// letter-spacing:
+.letter-sp-normal { letter-spacing: map-get($letter-spacings, normal); }
+.letter-sp-track { letter-spacing: map-get($letter-spacings, track); }
+.letter-sp-narrow { letter-spacing: map-get($letter-spacings, narrow); }
+.letter-sp-wide { letter-spacing: map-get($letter-spacings, wide); }
+
+// overflow-wrap:
+.of-wrap-normal { overflow-wrap: normal; }
+.of-wrap-break-word { overflow-wrap: break-word; }
+
+// white-space:
+.white-sp-normal { white-space: normal; }
+.white-sp-nowrap { white-space: nowrap; }
+.white-sp-pre { white-space: pre; }
+.white-sp-pre-wrap { white-space: pre-wrap; }
+.white-sp-pre-line { white-space: pre-line; }
+
+// word-break:
+.word-br-normal { word-break: normal; }
+.word-br-break-all { word-break: break-all; }
+.word-br-keep-all { word-break: keep-all; }
+.word-br-break-word { word-break: break-word; }
+
+// hyphens:
+.hyp-none { hyphens: none; }
+.hyp-manual { hyphens: manual; }
+.hyp-auto { hyphens: auto; }
+
+// text-align:
+.t-a-left { text-align: left; }
+.t-a-center { text-align: center; }
+.t-a-right { text-align: right; }
+
+// text-decoration:
+.t-d-none { text-decoration: none; }
+.t-d-strike { text-decoration: strike; }
+.t-d-underline { text-decoration: underline; }
+
+// text-indent:
+.t-i-0 { text-indent: 0; }
+.t-i-100 { text-indent: 100%; }
+
+@include spacing-rules($custom-spacings, $spacings, $spacing-scale) {
+  .t-i#{$spacing-step} { text-indent: $spacing-val; }
+  .t-i#{$spacing-step}n { text-indent: - $spacing-val; }
+}
+
+// text-transform:
+.t-t-none { text-transform: none; }
+.t-t-uppercase { text-transform: uppercase; }
+.t-t-lowercase { text-transform: lowercase; }
+.t-t-capitalize { text-transform: capitalize; }

@@ -1,0 +1,88 @@
+// # Border
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// border:
+.b-top { border-top: 1px solid; }
+.b-bottom { border-bottom: 1px solid; }
+.b-right { border-right: 1px solid; }
+.b-left { border-left: 1px solid; }
+.b-all { border: 1px solid; }
+.b-hor {
+  border-right: 1px solid;
+  border-left: 1px solid;
+}
+.b-ver {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+// border-width:
+.b-w-none { border-width: 0; }
+
+@include border-width-rules($border-widths) {
+  .b-w#{$border-width-step} {
+    border-width: $border-width-val;
+  }
+}
+
+// border-radius:
+.b-r-none { border-radius: 0; }
+.b-r-circle { border-radius: 100%; }
+.b-r-pill { border-radius: 1000px; }
+
+@include border-width-rules($border-widths) {
+  .b-r#{$border-width-step} { border-radius: $border-width-val; }
+}
+
+// border-radius 'position':
+.b-r-top {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.b-r-bottom {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.b-r-right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.b-r-left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.b-r-top-right {
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.b-r-top-left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.b-r-bottom-right {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.b-r-bottom-left {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+// border-style:
+.b-st-none { border-style: none; }
+.b-st-solid { border-style: solid; }
+.b-st-dot { border-style: dot; }
+.b-st-dash { border-style: dash; }
+
+// border-color:
+.b-c-inherit { border-color: inherit; }
+
+@include color-rules($colors) {
+  .b-c#{$color-name} { border-color: $color-val; }
+}

@@ -1,0 +1,54 @@
+// # Font
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+// font-family:
+@each $step, $val in $font-families {
+  $font-family-name: '-' + $step;
+  $font-family-val: unquote($val);
+  .f-f#{$font-family-name} { font-family: $font-family-val; }
+}
+
+// font-size:
+// Custom font-sizes to meet project requirements.
+@if ($custom-font-sizes) {
+  @each $step, $val in $font-sizes {
+    $font-size-step: '-' + $step;
+    $font-size-val: $val;
+    .f-s#{$font-size-step} { font-size: $font-size-val; }
+  }
+
+// Default: using scale config to generate font-sizes.
+} @else {
+  $base: map-get($font-size-scale, base);
+  $ratio: map-get($font-size-scale, ratio);
+  $steps-up: map-get($font-size-scale, steps-up);
+  $steps-down: map-get($font-size-scale, steps-down);
+
+  $total-steps: $steps-up + $steps-down;
+  $step: 1;
+  $exponent: $steps-up - 1;
+
+  @while $step <= $total-steps {
+    $font-size-step: '-' + $step;
+    $font-size-val: pow($ratio, $exponent) * $base;
+    .f-s#{$font-size-step} { font-size: $font-size-val; }
+
+    $step: $step + 1;
+    $exponent: $exponent - 1;
+  }
+}
+
+// font-weight:
+.f-w-1 { font-weight: 100; }
+.f-w-2 { font-weight: 200; }
+.f-w-3 { font-weight: 300; }
+.f-w-4 { font-weight: 400; }
+.f-w-5 { font-weight: 500; }
+.f-w-6 { font-weight: 600; }
+.f-w-7 { font-weight: 700; }
+
+// font-style:
+.f-st-normal { font-style: normal; }
+.f-st-italic { font-style: italic; }
