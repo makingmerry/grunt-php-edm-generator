@@ -2,6 +2,8 @@
 /*
 
 # Track source and utility files.
+!*.php
+!*.html
 !src/
 !utilities/
 
