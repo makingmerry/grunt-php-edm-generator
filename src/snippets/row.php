@@ -1,14 +1,14 @@
 <?php
   // Parameters:
-  // $columns: Array
-  // $class_list: Array
+  $columns = $columns ?? [];
+  $class_list = $class_list ?? false;
 ?>
 
-<?php if (is_array($columns) && !empty($columns)): ?>
+<?php if (!empty($columns) && is_array($columns)): ?>
   <div class="
     g__row
     <?php
-      echo is_array($class_list) && !empty($class_list)
+      echo !empty($class_list) && is_array($class_list)
         ? join(' ', $class_list)
         : '';
     ?>">
