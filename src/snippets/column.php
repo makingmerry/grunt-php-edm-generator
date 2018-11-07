@@ -13,7 +13,7 @@
     if (empty($render)) {
       throw new Exception('[Grid column]: render element is missing.');
     }
-    if (!is_string($name)) {
+    if (!is_string($render)) {
       throw new Exception('[Grid column]: render element is not a string.');
     }
 ?>
@@ -35,7 +35,7 @@
       // Shortcomings:
       // 1. Only 1 breakpoint.
       // 2. Can only diminish the number of columns from a desktop version to a mobile version.
-      if ((!empty($desktopcol_size) && is_int($desktop_col_size)) && (!empty($mobile_col_size) && is_int($mobile_col_size))) {
+      if ((!empty($desktop_col_size) && is_int($desktop_col_size)) && (!empty($mobile_col_size) && is_int($mobile_col_size))) {
         // !Failsafe: set desktop column size to maximum of 6/12 if mobile column size is 1/2,
         // due to shortcoming (2).
         if ($mobile_col_size === 1 && $desktop_col_size > 6) {
